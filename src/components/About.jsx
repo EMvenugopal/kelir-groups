@@ -45,7 +45,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="founder-initials">KR</span>
+              <img src="/photos/kr2.png" alt={company.founder} loading="lazy" />
             </motion.div>
             <motion.div
               className="founder-text"

@@ -9,7 +9,6 @@ function EraChapter({ era, index }) {
     offset: ['start end', 'end start'],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], [80, -80])
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.95, 1, 1, 0.95])
 
@@ -18,20 +17,15 @@ function EraChapter({ era, index }) {
   return (
     <div ref={ref} className="era-chapter" data-era={era.id}>
       <div className="era-inner">
-        {/* Year marker */}
-        <motion.div
-          className="era-year-marker"
-          style={{ y, opacity }}
-        >
-          <span className="era-year-big">{era.year}</span>
-          <span className="era-year-range">{era.yearRange}</span>
-        </motion.div>
-
         {/* Content side */}
         <motion.div
           className={`era-content ${isEven ? 'era-content--left' : 'era-content--right'}`}
           style={{ opacity, scale }}
         >
+          <div className="era-year-block">
+            <span className="era-year-big">{era.year}</span>
+            <span className="era-year-range">{era.yearRange}</span>
+          </div>
           <div className="era-tags">
             {era.tags.map((tag) => (
               <span key={tag} className="era-tag">{tag}</span>
