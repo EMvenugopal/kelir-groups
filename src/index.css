@@ -867,14 +867,15 @@ main { flex: 1; }
 
 @media (max-width: 880px) {
   .era-inner { grid-template-columns: 1fr; }
-  .era-visual { display: none; }
-  .era-content--right { text-align: left; grid-column: 1; }
+  .era-visual { grid-column: 1; grid-row: 1; display: flex; }
+  .era-accent-block { max-width: 100%; }
+  .era-content--right { text-align: left; grid-column: 1; grid-row: 2; }
   .era-content--right .era-tags { justify-content: flex-start; }
   .era-content--right .era-highlights { align-items: flex-start; }
   .era-content--right .era-highlights li { padding-right: 0; padding-left: 16px; }
   .era-content--right .era-highlights li::before { left: 0; right: auto; }
   .era-content--right .era-year-block { align-items: flex-start; }
-  .era-content { grid-column: 1; }
+  .era-content { grid-column: 1; grid-row: 2; }
 }
 
 /* ===== DIVISIONS ===== */
