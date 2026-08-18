@@ -8,11 +8,11 @@ export const company = {
   mission:
     'Build real products. Build strong companies. Create long-term value.',
   intro:
-    'Kelir Group of Companies is an Indian food and nutrition enterprise with over 17 years of experience in the food service industry. We are building next-generation manufacturing facilities for functional foods, beverages, collagen, healthy snacks, and nutrition products, and welcome global technology and business partnerships.',
+    'Kelir Group of Companies is an Indian food and nutrition enterprise with over 17 years of experience in the food service industry. We are building next-generation manufacturing facilities for functional foods, beverages, collagen, healthy snacks, and nutrition products. We welcome global technology and business partnerships.',
   description:
-    'Kelir Group is a multidisciplinary studio founded by Kiran Rajasekhar, working at the intersection of business, manufacturing, and long-term value creation. We build and scale consumer brands across food, wellness, nutrition, and lifestyle categories with a focus on fundamentals, systems, and execution.',
+    'Kelir Group is a multidisciplinary enterprise founded by Kiran Rajasekhar, working at the intersection of business, manufacturing, and long-term value creation. We build and scale consumer brands across food, wellness, nutrition, and lifestyle categories with a focus on fundamentals, systems, and execution.',
   founderBio:
-    'With over 17 years of experience in the food and beverage industry, Kiran has led operations across food processing units, central kitchens, and multi-brand F&B businesses, with a strong focus on quality, systems, and execution. His work spans business strategy, brand building, food & beverage operations and manufacturing, food processing, supply chains & scale-up, market entry and growth across India and global markets.',
+    'With over 17 years of experience in the food and beverage industry, Kiran has led operations across food processing units, central kitchens, and multi-brand F&B businesses, with a strong focus on quality, systems, and execution. His work spans business strategy, brand building, food and beverage operations, manufacturing, food processing, supply chains, scale-up, and market entry and growth across India and global markets.',
   founded: 2025,
   location: 'India',
   founder: 'Kiran Rajasekhar',

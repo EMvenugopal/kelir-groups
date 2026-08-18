@@ -97,7 +97,7 @@ const journey = [
     title: 'The Twister Express',
     subtitle: 'Quick-Service Expansion',
     description:
-      'Expanded the brand with a quick-service outlet at Manyata Tech Park, Bengaluru. Proving that the concept could work at both fine-dining and fast-casual scales.',
+      'Expanded the brand with a quick-service outlet at Manyata Tech Park, Bengaluru. This proved that the concept could work at both fine-dining and fast-casual scales.',
     highlights: [
       'Quick-service outlet at Manyata Tech Park',
       'Fast-casual concept validation',

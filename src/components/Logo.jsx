@@ -5,7 +5,7 @@ export default function Logo({ width = 150, light = false }) {
       height={width * 0.227}
       viewBox="0 0 150 34"
       role="img"
-      aria-label="Kelir Groups"
+      aria-label="Kelir Group of Companies"
     >
       <defs>
         <linearGradient id="kg" x1="0" y1="0" x2="1" y2="1">
