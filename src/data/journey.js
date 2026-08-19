@@ -19,7 +19,7 @@ const journey = [
       'At peak, served approximately 9,400 cups of tea and coffee per day',
     ],
     tags: ['Food Services', 'Corporate Catering', 'Brand Building'],
-    accentColor: '#0a66c2',
+    accentColor: '#f09020',
     image: 'photos/WhatsApp Image 2026-08-14 at 00.24.10 (1).jpeg',
   },
   {
@@ -39,7 +39,7 @@ const journey = [
       'Production capacity of approximately 17,000 meals per day',
     ],
     tags: ['Multi-Brand', 'Central Kitchen', 'Scale'],
-    accentColor: '#004182',
+    accentColor: '#e84808',
     image: 'photos/WhatsApp Image 2026-08-14 at 00.24.10.jpeg',
   },
   {
@@ -55,7 +55,7 @@ const journey = [
       'Completed a defining phase of company growth',
     ],
     tags: ['Exit', 'M&A', 'Milestone'],
-    accentColor: '#0a66c2',
+    accentColor: '#f09020',
     image: 'photos/WhatsApp Image 2026-08-14 at 00.24.11 (1).jpeg',
   },
   {
@@ -71,7 +71,7 @@ const journey = [
       'Food service solutions',
     ],
     tags: ['Supply Chain', 'Corporate', 'Lean Operations'],
-    accentColor: '#004182',
+    accentColor: '#e84808',
     image: 'photos/WhatsApp Image 2026-08-14 at 00.24.11 (2).jpeg',
   },
   {
@@ -87,7 +87,7 @@ const journey = [
       'Modern international vegetarian cuisine',
     ],
     tags: ['Restaurant', 'Fine Dining', 'Brand'],
-    accentColor: '#0a66c2',
+    accentColor: '#f09020',
     image: 'photos/WhatsApp Image 2026-08-14 at 00.24.11.jpeg',
   },
   {
@@ -103,7 +103,7 @@ const journey = [
       'Fast-casual concept validation',
     ],
     tags: ['QSR', 'Expansion', 'Bengaluru'],
-    accentColor: '#004182',
+    accentColor: '#e84808',
     image: 'photos/WhatsApp Image 2026-08-14 at 00.24.12 (1).jpeg',
   },
   {
@@ -121,7 +121,7 @@ const journey = [
       'Combined central production with on-site operations',
     ],
     tags: ['Central Kitchen', 'Corporate Catering', 'Operations'],
-    accentColor: '#0a66c2',
+    accentColor: '#f09020',
     image: 'photos/WhatsApp Image 2026-08-14 at 00.24.12 (2).jpeg',
   },
   {
@@ -137,7 +137,7 @@ const journey = [
       'Enabled transition to research & manufacturing',
     ],
     tags: ['Exit', 'Pivot', 'New Beginning'],
-    accentColor: '#004182',
+    accentColor: '#e84808',
     image: 'photos/WhatsApp Image 2026-08-14 at 00.24.12.jpeg',
   },
   {
@@ -156,7 +156,7 @@ const journey = [
       'Manufacturing facility under development',
     ],
     tags: ['Manufacturing', 'R&D', 'Nutrition'],
-    accentColor: '#0a66c2',
+    accentColor: '#f09020',
     image: 'photos/WhatsApp Image 2026-08-14 at 00.24.13.jpeg',
   },
   {
@@ -177,7 +177,7 @@ const journey = [
       'International Technology Partnerships',
     ],
     tags: ['Vision', 'Manufacturing', 'Global'],
-    accentColor: '#004182',
+    accentColor: '#e84808',
     image: 'photos/WhatsApp Image 2026-08-14 at 00.24.14.jpeg',
   },
 ]

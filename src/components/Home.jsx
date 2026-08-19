@@ -2,7 +2,16 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Counter from './Counter.jsx'
-import { company, stats, ventures } from '../data/company.js'
+import { company, stats, ventures, whatWeDo } from '../data/company.js'
+
+const brandLogos = [
+  { src: '/photos/brandlogos/Screenshot 2026-08-19 at 09.43.34.png', alt: 'Brand Logo' },
+  { src: '/photos/brandlogos/Screenshot 2026-08-19 at 13.42.57.png', alt: 'Brand Logo' },
+  { src: '/photos/brandlogos/WhatsApp Image 2026-08-14 at 00.24.34.jpeg', alt: 'Brand Logo' },
+  { src: '/photos/brandlogos/WhatsApp Image 2026-08-19 at 02.51.22.jpeg', alt: 'Brand Logo' },
+  { src: '/photos/brandlogos/WhatsApp Image 2026-08-19 at 02.52.08.jpeg', alt: 'Brand Logo' },
+  { src: '/photos/brandlogos/WhatsApp Image 2026-08-19 at 03.02.45.jpeg', alt: 'Brand Logo' },
+]
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -75,44 +84,32 @@ export default function Home() {
         <div className="container hero-grid">
           <motion.div className="hero-text" initial="hidden" animate="show">
             <motion.h1 variants={fadeUp} custom={0}>
-              {company.tagline}
+              We are entering into Food Processing and Advanced Manufacturing.
             </motion.h1>
             <motion.p className="hero-headline" variants={fadeUp} custom={1}>
               {company.intro}
             </motion.p>
           </motion.div>
 
-          {/* Profile card */}
+          {/* Brand logos masonry grid */}
           <motion.div
             className="hero-side"
-            initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <div className="hero-card">
-              <div className="hero-card-photo">
-                <div className="hero-card-photo-inner">
-                  <img src="/photos/kr1.png" alt={company.founder} />
-                </div>
-              </div>
-              <div className="hero-card-body">
-                <h3>{company.founder}</h3>
-                <p className="hero-card-role">{company.founderRole}</p>
-                <p className="hero-card-bio">
-                  Building consumer brands across food, wellness, and nutrition with 17+ years of F&B experience.
-                </p>
-                <div className="hero-card-actions">
-                  <Link to="/about" className="btn btn-hero-profile">Profile</Link>
-                  <a
-                    className="btn btn-hero-follow"
-                    href="https://www.linkedin.com/in/kiran-rajashekar-214a19212/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Follow
-                  </a>
-                </div>
-              </div>
+            <div className="hero-brand-masonry">
+              {brandLogos.map((logo, i) => (
+                <motion.div
+                  key={i}
+                  className="hero-brand-item"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <img src={logo.src} alt={logo.alt} loading="lazy" />
+                </motion.div>
+              ))}
             </div>
             <div className="hero-under-card">
               <div className="hero-card-cta">
@@ -129,6 +126,35 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* WHAT WE DO */}
+      <section className="what-we-do">
+        <div className="container center">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            What We Do
+          </motion.h2>
+          <div className="what-we-do-grid">
+            {whatWeDo.map((item, i) => (
+              <motion.div
+                key={item}
+                className="what-we-do-item"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                {item}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -152,13 +178,14 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            10 ventures across 17+ years — hover the circle to explore.
+            10 ventures across 17+ years — tap or hover the circle to explore.
           </motion.p>
 
           <div
             className="orbit-display"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
+            onClick={() => setHovered((h) => !h)}
           >
             <div className="orbit-center">
               <div className="orbit-core">

@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import journey from '../data/journey.js'
 
-function EraChapter({ era, index }) {
+function EraChapter({ era }) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -12,52 +12,26 @@ function EraChapter({ era, index }) {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.95, 1, 1, 0.95])
 
-  const isEven = index % 2 === 0
-
   return (
-    <div ref={ref} className="era-chapter" data-era={era.id}>
-      <div className="era-inner">
-        {/* Content side */}
-        <motion.div
-          className={`era-content ${isEven ? 'era-content--left' : 'era-content--right'}`}
-          style={{ opacity, scale }}
-        >
-          <div className="era-year-block">
-            <span className="era-year-big">{era.year}</span>
-            <span className="era-year-range">{era.yearRange}</span>
-          </div>
-          <div className="era-tags">
-            {era.tags.map((tag) => (
-              <span key={tag} className="era-tag">{tag}</span>
-            ))}
-          </div>
-          <h2 className="era-title">{era.title}</h2>
-          <p className="era-subtitle">{era.subtitle}</p>
-          <p className="era-description">{era.description}</p>
-          <ul className="era-highlights">
-            {era.highlights.map((h) => (
-              <li key={h}>{h}</li>
-            ))}
-          </ul>
-        </motion.div>
-
-        {/* Visual side — photo */}
-        <motion.div
-          className={`era-visual ${isEven ? 'era-visual--right' : 'era-visual--left'}`}
-          style={{ y: useTransform(scrollYProgress, [0, 1], [60, -60]) }}
-        >
-          <div
-            className="era-accent-block"
-            style={{ background: era.accentColor }}
-          >
-            {era.image && (
-              <img className="era-accent-img" src={`/${era.image}`} alt={era.title} loading="lazy" />
-            )}
-            <span className="era-accent-year">{era.yearRange}</span>
-          </div>
-        </motion.div>
+    <motion.div ref={ref} className="era-card" style={{ opacity, scale }}>
+      <div className="era-year-block">
+        <span className="era-year-big">{era.year}</span>
+        <span className="era-year-range">{era.yearRange}</span>
       </div>
-    </div>
+      <div className="era-tags">
+        {era.tags.map((tag) => (
+          <span key={tag} className="era-tag">{tag}</span>
+        ))}
+      </div>
+      <h2 className="era-title">{era.title}</h2>
+      <p className="era-subtitle">{era.subtitle}</p>
+      <p className="era-description">{era.description}</p>
+      <ul className="era-highlights">
+        {era.highlights.map((h) => (
+          <li key={h}>{h}</li>
+        ))}
+      </ul>
+    </motion.div>
   )
 }
 
@@ -90,14 +64,30 @@ export default function ScrollJourney() {
     offset: ['start start', 'end end'],
   })
 
-  const currentYearIndex = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, journey.length - 1]
-  )
-
   return (
     <section className="scroll-journey" ref={containerRef}>
+      {/* Journey hero text */}
+      <section className="journey-text-hero">
+        <div className="container center">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Innovating the Future of Functional Foods &amp; Nutrition
+          </motion.h1>
+          <motion.p
+            className="hero-headline"
+            style={{ margin: '16px auto 0', maxWidth: 600 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            Kelir Group of Companies is an Indian food and nutrition enterprise with over 17 years of experience in the food service industry. We are building next-generation manufacturing facilities for functional foods, beverages, collagen, healthy snacks, and nutrition products. We welcome global technology and business partnerships.
+          </motion.p>
+        </div>
+      </section>
+
       {/* Sticky header */}
       <div className="journey-header">
         <div className="container">
@@ -112,11 +102,13 @@ export default function ScrollJourney() {
       {/* Progress rail */}
       <ProgressRail />
 
-      {/* Era chapters */}
+      {/* Era chapters — 2-column card grid */}
       <div className="journey-chapters">
-        {journey.map((era, i) => (
-          <EraChapter key={era.id} era={era} index={i} />
-        ))}
+        <div className="era-grid">
+          {journey.map((era) => (
+            <EraChapter key={era.id} era={era} />
+          ))}
+        </div>
       </div>
 
       {/* Closing */}

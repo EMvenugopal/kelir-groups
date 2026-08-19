@@ -1,182 +1,95 @@
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useEffect, useCallback } from 'react'
-import photos, { categories, years } from '../data/photos.js'
+import { motion } from 'framer-motion'
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: (i = 0) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.5, delay: (i % 6) * 0.06, ease: 'easeOut' }
-  })
+const onsiteImages = [
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.55 (1).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.55 (2).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.55.jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.56 (1).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.56 (2).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.56.jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.57 (1).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.57 (2).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.57.jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.58 (1).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.58 (2).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.58.jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.59 (1).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.59 (2).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.59.jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.14.00 (1).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.14.00 (2).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.14.00.jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.14.01 (1).jpeg',
+  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.14.01.jpeg',
+]
+
+const offsiteImages = [
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.10 (1).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.10.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.11 (1).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.11 (2).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.11.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.12 (1).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.12 (2).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.12.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.13.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.14.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.15.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.16 (1).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.16.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.17.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.19 (1).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.19 (2).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.19.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.20.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.21 (1).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.21.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.22.jpeg',
+]
+
+function MasonryGallery({ images }) {
+  return (
+    <div className="photo-masonry">
+      {images.map((src, i) => (
+        <motion.div
+          key={src}
+          className="photo-masonry-item"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
+        >
+          <img src={src} alt="" loading="lazy" />
+        </motion.div>
+      ))}
+    </div>
+  )
 }
 
 export default function Photographs() {
-  const [activeCategory, setActiveCategory] = useState('All')
-  const [activeYear, setActiveYear] = useState('All')
-  const [lightbox, setLightbox] = useState(null)
-  const [lightboxIndex, setLightboxIndex] = useState(-1)
-
-  const filtered = photos.filter((p) => {
-    const catMatch = activeCategory === 'All' || p.category === activeCategory
-    const yearMatch = activeYear === 'All' || p.year === activeYear
-    return catMatch && yearMatch
-  })
-
-  const openLightbox = useCallback((photo) => {
-    const idx = filtered.findIndex((p) => p.id === photo.id)
-    setLightbox(photo)
-    setLightboxIndex(idx)
-  }, [filtered])
-
-  const closeLightbox = useCallback(() => {
-    setLightbox(null)
-    setLightboxIndex(-1)
-  }, [])
-
-  const navigate = useCallback((dir) => {
-    const next = lightboxIndex + dir
-    if (next >= 0 && next < filtered.length) {
-      setLightbox(filtered[next])
-      setLightboxIndex(next)
-    }
-  }, [lightboxIndex, filtered])
-
-  useEffect(() => {
-    if (!lightbox) return
-    const handler = (e) => {
-      if (e.key === 'Escape') closeLightbox()
-      if (e.key === 'ArrowLeft') navigate(-1)
-      if (e.key === 'ArrowRight') navigate(1)
-    }
-    window.addEventListener('keydown', handler)
-    return () => window.removeEventListener('keydown', handler)
-  }, [lightbox, closeLightbox, navigate])
-
   return (
-    <section className="container section">
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        Photographs
-      </motion.h2>
-      <motion.p
-        className="section-sub"
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
-        17+ years of moments — from corporate kitchens to global ventures.
-        Each image tells a chapter of the journey.
-      </motion.p>
+    <section className="photographs-page">
+      <div className="container">
+        <motion.h2
+          className="section-title center"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Photographs
+        </motion.h2>
 
-      {/* Dual filters */}
-      <div className="gallery-controls">
-        <div className="gallery-filter-group">
-          <span className="gallery-filter-label">Category</span>
-          <div className="filters">
-            {categories.map((c) => (
-              <button
-                key={c}
-                className={activeCategory === c ? 'filter active' : 'filter'}
-                onClick={() => setActiveCategory(c)}
-              >
-                {c}
-              </button>
-            ))}
+        <div className="photo-columns">
+          <div className="photo-col">
+            <h3 className="photo-col-title">Onsite</h3>
+            <MasonryGallery images={onsiteImages} />
           </div>
-        </div>
-        <div className="gallery-filter-group">
-          <span className="gallery-filter-label">Year</span>
-          <div className="filters">
-            {years.map((y) => (
-              <button
-                key={y}
-                className={activeYear === y ? 'filter active' : 'filter'}
-                onClick={() => setActiveYear(y)}
-              >
-                {y}
-              </button>
-            ))}
+          <div className="photo-col">
+            <h3 className="photo-col-title">Offsite</h3>
+            <MasonryGallery images={offsiteImages} />
           </div>
         </div>
       </div>
-
-      {/* Count */}
-      <p className="gallery-count">
-        Showing <strong>{filtered.length}</strong> of {photos.length} photos
-      </p>
-
-      {/* Masonry gallery */}
-      <div className="gallery-masonry">
-        <AnimatePresence mode="popLayout">
-          {filtered.map((p, i) => (
-            <motion.figure
-              layout
-              key={p.id}
-              className="photo"
-              initial="hidden"
-              animate="show"
-              exit={{ opacity: 0, scale: 0.8 }}
-              variants={fadeUp}
-              custom={i}
-              onClick={() => openLightbox(p)}
-            >
-              <img src={`/${p.src}`} alt={p.title} loading="lazy" />
-              <div className="photo-overlay">
-                <span className="photo-title">{p.title}</span>
-                <div className="photo-meta">
-                  <span className="photo-tag">{p.category}</span>
-                  <span className="photo-year">{p.year}</span>
-                </div>
-              </div>
-            </motion.figure>
-          ))}
-        </AnimatePresence>
-      </div>
-
-      {filtered.length === 0 && (
-        <p className="muted" style={{ textAlign: 'center', padding: '60px 0' }}>
-          No photos match the selected filters.
-        </p>
-      )}
-
-      {/* Lightbox */}
-      <AnimatePresence>
-        {lightbox && (
-          <motion.div
-            className="lightbox"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={closeLightbox}
-          >
-            <button className="lightbox-close" onClick={closeLightbox}>✕</button>
-            <motion.div
-              className="lightbox-inner"
-              initial={{ scale: 0.85, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.85, opacity: 0 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img className="lightbox-img" src={`/${lightbox.src}`} alt={lightbox.title} />
-              <h3>{lightbox.title}</h3>
-              <p>{lightbox.category} · {lightbox.year}</p>
-              <div className="lightbox-nav">
-                <button onClick={() => navigate(-1)} disabled={lightboxIndex <= 0}>
-                  ← Prev
-                </button>
-                <button onClick={() => navigate(1)} disabled={lightboxIndex >= filtered.length - 1}>
-                  Next →
-                </button>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   )
 }

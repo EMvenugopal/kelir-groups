@@ -9,8 +9,8 @@ export default function Logo({ width = 150, light = false }) {
     >
       <defs>
         <linearGradient id="kg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#0a66c2" />
-          <stop offset="1" stopColor="#6aa9e9" />
+          <stop offset="0" stopColor="#f09020" />
+          <stop offset="1" stopColor="#f8a028" />
         </linearGradient>
       </defs>
       <rect x="0" y="2" width="30" height="30" rx="8" fill="url(#kg)" />
@@ -23,7 +23,7 @@ export default function Logo({ width = 150, light = false }) {
         strokeLinejoin="round"
       />
       <text x="38" y="23" fontFamily="-apple-system, Segoe UI, Arial, sans-serif" fontSize="18" fontWeight="800" fill={light ? '#ffffff' : '#1d2226'}>
-        Kelir<tspan fill={light ? '#7fb4ee' : '#0a66c2'}> Groups</tspan>
+        <tspan fill={light ? '#f8a028' : '#f09020'}>K</tspan><tspan fill={light ? '#ffffff' : '#1d2226'}>elir</tspan><tspan fill={light ? '#f8a028' : '#f09020'}> Groups</tspan>
       </text>
     </svg>
   )

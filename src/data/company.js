@@ -11,17 +11,64 @@ export const company = {
     'Kelir Group of Companies is an Indian food and nutrition enterprise with over 17 years of experience in the food service industry. We are building next-generation manufacturing facilities for functional foods, beverages, collagen, healthy snacks, and nutrition products. We welcome global technology and business partnerships.',
   description:
     'Kelir Group is a multidisciplinary enterprise founded by Kiran Rajasekhar, working at the intersection of business, manufacturing, and long-term value creation. We build and scale consumer brands across food, wellness, nutrition, and lifestyle categories with a focus on fundamentals, systems, and execution.',
-  founderBio:
-    'With over 17 years of experience in the food and beverage industry, Kiran has led operations across food processing units, central kitchens, and multi-brand F&B businesses, with a strong focus on quality, systems, and execution. His work spans business strategy, brand building, food and beverage operations, manufacturing, food processing, supply chains, scale-up, and market entry and growth across India and global markets.',
   founded: 2025,
   location: 'India',
-  founder: 'Kiran Rajasekhar',
-  founderRole: 'Founder & Managing Director',
 }
 
+export const founders = [
+  {
+    name: 'Kiran Rajasekhar',
+    role: 'Founder & Managing Director',
+    photo: '/photos/kr2.png',
+    bio: 'Kiran Rajasekhar brings approximately 17+ years of experience in the Food & Beverage, hospitality and institutional food-service sector. His experience includes business development, corporate catering, hospitality operations, centralized food production, institutional customer management and large-scale food-service operations.',
+    expertise: [
+      'Food & Beverage operations',
+      'Corporate catering',
+      'Institutional food service',
+      'Business development',
+      'Customer acquisition',
+      'Food production',
+      'Procurement',
+      'Operations management',
+      'Corporate cafeteria ecosystems',
+    ],
+    closing: 'He is now focused on building a scalable food manufacturing and functional-wellness food business based in Tamil Nadu.',
+  },
+  {
+    name: 'C. B. Raghavendra',
+    role: 'Co-Founder & Director',
+    photo: '',
+    bio: 'C. B. Raghavendra brings approximately 20 years of professional experience, primarily across hospitality and restaurant operations. His experience includes restaurant management, inventory management, staff management, customer experience, training, business operations and team leadership. His professional background includes experience associated with Pizza Hut / YUM Restaurants International franchise operations.',
+    expertise: [
+      'Restaurant operations',
+      'Inventory management',
+      'Staff management',
+      'Customer experience',
+      'Team leadership',
+      'Training and development',
+      'Business operations',
+      'Operational accountability',
+    ],
+    closing: 'He will contribute to UTT\'s operational execution, institutional business development and commercial growth.',
+  },
+]
+
 export const vision = {
-  title: 'Our Vision 2026 — 2029',
-  subtitle: 'Building next-generation manufacturing for functional foods & nutrition.',
+  ourVision: 'To be a global leader in functional and wellness food innovation, creating a healthier world through science, nature and technology.',
+  ourMission: 'To develop and deliver clean label, nutritious, functional and sustainable food products using advanced food technology, traditional wisdom and modern science.',
+  businessVision: 'To build a leading Indian functional and wellness food company that combines traditional Indian ingredients, modern food technology, clean-label product development and institutional distribution.',
+  businessVisionDetail: 'UTT\'s long-term objective is to develop products for everyday consumption that are affordable, convenient and differentiated from conventional mass-market snacks.',
+  businessMission: [
+    'Functional and wellness foods',
+    'Clean-label-oriented product development',
+    'Indian traditional ingredients',
+    'Modern food processing',
+    'Product R&D and innovation',
+    'Controlled manufacturing',
+    'Institutional food distribution',
+    'Digital traceability',
+    'Future retail and export opportunities',
+  ],
   roadmap: [
     { year: '2026', items: ['Functional beverages', 'Functional chocolates & chikki', 'Popped snacks'] },
     { year: '2027', items: ['Heritage rice products', 'Chicken & mutton collagen', 'Functional nutrition powders'] },
@@ -83,25 +130,46 @@ export const partnerships = {
 
 export const values = [
   {
-    icon: '✦',
-    title: 'Fundamentals',
-    text: 'Real, long-term success is built not by short-term hype, but by strong fundamentals and disciplined execution.',
+    icon: '❤',
+    title: 'Health First',
+    text: 'Every product we create starts with a commitment to health, nutrition and wellness for everyday consumers.',
   },
   {
-    icon: '◎',
-    title: 'Systems',
-    text: 'Resilient systems survive cycles. We build future-ready infrastructure that compounds over time.',
+    icon: '🔬',
+    title: 'Science Driven',
+    text: 'We combine modern food science with traditional wisdom to develop products backed by research and evidence.',
   },
   {
     icon: '⚡',
-    title: 'Scale',
-    text: 'From ground-level operations to global supply chains — we think in scalable models from day one.',
+    title: 'Continuous Innovation',
+    text: 'We invest in R&D and stay ahead of food technology trends to deliver differentiated, clean-label products.',
   },
   {
-    icon: '❤',
-    title: 'Trust',
+    icon: '✦',
+    title: 'Integrity & Trust',
     text: 'Long-term relationships over short-term wins. We build for customers, partners, and the ecosystem.',
   },
+  {
+    icon: '🌿',
+    title: 'Sustainability',
+    text: 'From sourcing to packaging, we design processes that minimise waste and respect the environment.',
+  },
+  {
+    icon: '🤝',
+    title: 'People & Community',
+    text: 'We build businesses that create jobs, empower communities and contribute to local economies.',
+  },
+]
+
+export const whatWeDo = [
+  'Functional Foods & Wellness Products',
+  'Functional Beverages & Nutrition Drinks',
+  'Millet & Heritage Rice Products',
+  'Food R&D, Formulation & Processing',
+  'Popped Snacks & Natural Chips',
+  'Food Preservation & Packaging Technology',
+  'Functional Chocolates & Chikkis',
+  'Domestic & Export Business',
 ]
 
 export const stats = [

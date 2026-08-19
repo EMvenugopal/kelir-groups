@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import Counter from './Counter.jsx'
-import { company, vision, divisions, partnerships, values, stats, expertise, ventures } from '../data/company.js'
+import { company, founders, vision, divisions, partnerships, values, stats, expertise, ventures } from '../data/company.js'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -34,38 +34,53 @@ export default function About() {
         </div>
       </section>
 
-      {/* FOUNDER */}
-      <section className="about-founder">
-        <div className="container">
-          <div className="founder-grid">
-            <motion.div
-              className="founder-photo"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <img src="/photos/kr2.png" alt={company.founder} loading="lazy" />
-            </motion.div>
-            <motion.div
-              className="founder-text"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <h2>{company.founder}</h2>
-              <p className="founder-role">{company.founderRole}</p>
-              <p>{company.founderBio}</p>
-              <p>
-                He believes most real progress is not driven by noise, headlines,
-                or short-term trends — but by disciplined execution, strong systems,
-                and long-term thinking.
-              </p>
-            </motion.div>
+      {/* FOUNDERS */}
+      {founders.map((f, i) => (
+        <section key={f.name} className="about-founder">
+          <div className="container">
+            <div className={`founder-grid ${i % 2 !== 0 ? 'founder-grid--reverse' : ''}`}>
+              {f.photo ? (
+                <motion.div
+                  className="founder-photo"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <img src={f.photo} alt={f.name} loading="lazy" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  className="founder-photo founder-photo--placeholder"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <span>{f.name.split(' ').map(n => n[0]).join('')}</span>
+                </motion.div>
+              )}
+              <motion.div
+                className="founder-text"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <h2>{f.name}</h2>
+                <p className="founder-role">{f.role}</p>
+                <p>{f.bio}</p>
+                <div className="founder-expertise">
+                  {f.expertise.map((e) => (
+                    <span key={e} className="expertise-pill">{e}</span>
+                  ))}
+                </div>
+                <p>{f.closing}</p>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* DIVISIONS */}
       <section className="container section">
@@ -99,23 +114,49 @@ export default function About() {
         </div>
       </section>
 
-      {/* VISION ROADMAP */}
-      <section className="scroll-journey" style={{ background: 'var(--ink)', color: '#fff' }}>
-        <div className="container section" style={{ padding: '80px 32px' }}>
+      {/* VISION & MISSION */}
+      <section className="about-vision" style={{ background: 'var(--ink)', color: '#fff' }}>
+        <div className="container section about-vision-inner">
           <motion.h2
-            className="section-title"
+            className="section-title center"
             style={{ color: '#fff' }}
             initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
           >
-            {vision.title}
+            Vision & Mission
           </motion.h2>
-          <motion.p
-            className="section-sub"
-            style={{ color: '#8a9199' }}
-            initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} custom={1}
+
+          <div className="vision-grid">
+            <motion.div className="vision-card" initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} custom={0}>
+              <h3>Our Vision</h3>
+              <p>{vision.ourVision}</p>
+            </motion.div>
+            <motion.div className="vision-card" initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} custom={1}>
+              <h3>Our Mission</h3>
+              <p>{vision.ourMission}</p>
+            </motion.div>
+            <motion.div className="vision-card vision-card--wide" initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} custom={2}>
+              <h3>Business Vision</h3>
+              <p>{vision.businessVision}</p>
+              <p style={{ marginTop: 12, color: 'rgba(255,255,255,0.5)', fontSize: 14 }}>{vision.businessVisionDetail}</p>
+            </motion.div>
+            <motion.div className="vision-card vision-card--wide" initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} custom={3}>
+              <h3>Business Mission</h3>
+              <p>UTFTC will focus on:</p>
+              <div className="vision-mission-list">
+                {vision.businessMission.map((item) => (
+                  <span key={item} className="era-tag">{item}</span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.h3
+            className="section-sub center"
+            style={{ color: '#fff', marginTop: 60, marginBottom: 30 }}
+            initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
           >
-            {vision.subtitle}
-          </motion.p>
+            Our Vision 2026 — 2029
+          </motion.h3>
           <div className="roadmap">
             {vision.roadmap.map((yr, i) => (
               <motion.div
@@ -142,14 +183,14 @@ export default function About() {
           className="section-title center"
           initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
         >
-          What We Believe
+          Our Values
         </motion.h2>
         <motion.p
           className="section-sub center"
           style={{ margin: '0 auto 40px' }}
           initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} custom={1}
         >
-          Four principles that shape every venture.
+          Six principles that guide every venture.
         </motion.p>
         <div className="values-grid">
           {values.map((v, i) => (
@@ -255,7 +296,7 @@ export default function About() {
         >
           10 ventures built across 17+ years — from corporate cafeterias to consumer brands.
         </motion.p>
-        <div className="divisions-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+        <div className="divisions-grid divisions-grid--2">
           {ventures.map((v, i) => (
             <motion.div
               key={v.name}
