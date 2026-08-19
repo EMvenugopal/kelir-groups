@@ -81,11 +81,11 @@ export default function Photographs() {
 
         <div className="photo-columns">
           <div className="photo-col">
-            <h3 className="photo-col-title">Onsite</h3>
+            <h3 className="photo-col-title">Onsite Pictures</h3>
             <MasonryGallery images={onsiteImages} />
           </div>
           <div className="photo-col">
-            <h3 className="photo-col-title">Offsite</h3>
+            <h3 className="photo-col-title">Offsite Pictures</h3>
             <MasonryGallery images={offsiteImages} />
           </div>
         </div>
