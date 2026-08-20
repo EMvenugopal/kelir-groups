@@ -4,7 +4,6 @@ const onsiteImages = [
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.55 (1).jpeg',
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.55 (2).jpeg',
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.55.jpeg',
-  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.56 (1).jpeg',
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.56 (2).jpeg',
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.56.jpeg',
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.57 (1).jpeg',

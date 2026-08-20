@@ -204,7 +204,7 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/borass.jpeg" alt="BORASS" />
+                <img src="/photos/brandlogos/borass2.png" alt="BORASS" />
               </div>
               <h3>BORASS</h3>
               <p className="brand-card-cat">Natural Sweeteners &amp; Food Products</p>

@@ -10,7 +10,7 @@ const brandLogos = [
   { src: '/photos/brandlogos/twisted desi.jpeg', alt: 'THE TWISTED DESI' },
   { src: '/photos/brandlogos/wild roots.png', alt: 'THE TWISTER EXPRESS' },
   { src: '/photos/brandlogos/ayuraar.png', alt: 'AYURAAR' },
-  { src: '/photos/brandlogos/borass.jpeg', alt: 'BORASS' },
+  { src: '/photos/brandlogos/borass2.png', alt: 'BORASS' },
   { src: '/photos/brandlogos/oilvika.png', alt: 'OILVIKA' },
   { src: '/photos/brandlogos/arimaariva.png', alt: 'ARIMA ARIVA' },
   { src: '/photos/brandlogos/alilai.jpeg', alt: 'ALILAI' },
