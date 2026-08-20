@@ -37,7 +37,7 @@ export const founders = [
   {
     name: 'C. B. Raghavendra',
     role: 'Co-Founder & Director',
-    photo: '',
+    photo: '/photos/cbr.jpeg',
     bio: 'C. B. Raghavendra brings approximately 20 years of professional experience, primarily across hospitality and restaurant operations. His experience includes restaurant management, inventory management, staff management, customer experience, training, business operations and team leadership. His professional background includes experience associated with Pizza Hut / YUM Restaurants International franchise operations.',
     expertise: [
       'Restaurant operations',
@@ -193,12 +193,14 @@ export const expertise = [
 ]
 
 export const ventures = [
-  { name: 'Kelir Group', role: 'Managing Director', period: '2025 — Present', type: 'Food & Nutrition' },
+  { name: 'Kelir Group', role: 'Managing Director', period: '2025 — Present', type: 'Food Processing & Nutrition' },
   { name: 'Velnova Naturals', role: 'Managing Director', period: '2025', type: 'Kelir Group Company' },
+  { name: 'Strategic Transition & New Direction', role: 'Managing Director', period: '2023', type: 'Pivot to Manufacturing' },
   { name: 'Krithi Ventures', role: 'Managing Director', period: '2020 — 2023', type: 'Central Kitchen & Catering' },
   { name: 'The Twister Express', role: 'Co-Founder', period: '2019', type: 'Quick Service' },
   { name: 'The Twisted Desi', role: 'Co-Founder', period: '2018 — 2019', type: 'Fine Dining' },
   { name: 'Kiran Enterprises', role: 'Proprietor', period: '2016 — 2018', type: 'Pantry Supply' },
+  { name: 'Strategic Transition', role: 'Managing Director', period: '2016', type: 'Business Exit to MNC' },
   { name: 'Growing Today Hospitality', role: 'Managing Director', period: '2010 — 2016', type: 'Multi-Brand Catering' },
   { name: 'Growing Today Group', role: 'Managing Partner', period: '2008 — 2010', type: 'Corporate Food Services' },
 ]

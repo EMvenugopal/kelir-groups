@@ -5,12 +5,17 @@ import Counter from './Counter.jsx'
 import { company, stats, ventures, whatWeDo } from '../data/company.js'
 
 const brandLogos = [
-  { src: '/photos/brandlogos/Screenshot 2026-08-19 at 09.43.34.png', alt: 'Brand Logo' },
-  { src: '/photos/brandlogos/Screenshot 2026-08-19 at 13.42.57.png', alt: 'Brand Logo' },
-  { src: '/photos/brandlogos/WhatsApp Image 2026-08-14 at 00.24.34.jpeg', alt: 'Brand Logo' },
-  { src: '/photos/brandlogos/WhatsApp Image 2026-08-19 at 02.51.22.jpeg', alt: 'Brand Logo' },
-  { src: '/photos/brandlogos/WhatsApp Image 2026-08-19 at 02.52.08.jpeg', alt: 'Brand Logo' },
-  { src: '/photos/brandlogos/WhatsApp Image 2026-08-19 at 03.02.45.jpeg', alt: 'Brand Logo' },
+  { src: '/photos/brandlogos/jugojuice.png', alt: 'JUGO' },
+  { src: '/photos/brandlogos/pothigai.png', alt: 'POTHIGHAI' },
+  { src: '/photos/brandlogos/twisted desi.jpeg', alt: 'THE TWISTED DESI' },
+  { src: '/photos/brandlogos/wild roots.png', alt: 'THE TWISTER EXPRESS' },
+  { src: '/photos/brandlogos/ayuraar.png', alt: 'AYURAAR' },
+  { src: '/photos/brandlogos/borass.jpeg', alt: 'BORASS' },
+  { src: '/photos/brandlogos/oilvika.png', alt: 'OILVIKA' },
+  { src: '/photos/brandlogos/arimaariva.png', alt: 'ARIMA ARIVA' },
+  { src: '/photos/brandlogos/alilai.jpeg', alt: 'ALILAI' },
+  { src: '/photos/brandlogos/clove and coast.png', alt: 'GLOVE & COAST' },
+  { src: '/photos/brandlogos/kithnkin.jpeg', alt: 'KITH & KIN' },
 ]
 
 const fadeUp = {
@@ -23,13 +28,20 @@ const fadeUp = {
 }
 
 function OrbitRing({ isHovered }) {
-  const radius = 280
+  const radius = 320
 
   return (
     <div className="orbit-ring-container">
-      <svg className="orbit-paths" viewBox="0 0 700 700">
-        <circle cx="350" cy="350" r={radius} className="orbit-path" />
-      </svg>
+      <div className="orbit-ring-circle" style={{
+        position: 'absolute',
+        top: `${-radius}px`,
+        left: `${-radius}px`,
+        width: `${radius * 2}px`,
+        height: `${radius * 2}px`,
+        borderRadius: '50%',
+        border: '1px dashed rgba(10, 102, 194, 0.1)',
+        pointerEvents: 'none',
+      }} />
       {ventures.map((v, i) => {
         const total = ventures.length
         const angle = 180 + (i / total) * 360
@@ -39,6 +51,14 @@ function OrbitRing({ isHovered }) {
         const y = Math.sin(rad) * radius
         const isLeft = x < -10
         const isRight = x > 10
+        const isNearTop = y < -200
+        const isNearBottom = y > 200
+        const labelShift = isNearTop || isNearBottom
+          ? ((i % 2 === 0) ? -55 : 55)
+          : 0
+        const labelDrop = isNearTop || isNearBottom
+          ? ((i % 2 === 0) ? -15 : 15)
+          : 0
         return (
           <motion.div
             key={v.name}
@@ -61,7 +81,7 @@ function OrbitRing({ isHovered }) {
                 }
             }
           >
-            <div className="satellite-stack">
+            <div className="satellite-stack" style={{ transform: `translate(${labelShift}px, ${labelDrop}px)` }}>
               <div className="satellite-dot" />
               <span className="satellite-label">{v.name}</span>
               <span className="satellite-sub">{v.period}</span>

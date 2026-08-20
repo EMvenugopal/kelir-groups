@@ -16,21 +16,44 @@ export default function About() {
       {/* HERO */}
       <section className="about-hero">
         <div className="container">
-          <motion.span className="pill" initial="hidden" animate="show" variants={fadeUp} custom={0}>
-            About {company.name}
-          </motion.span>
+          <motion.h4
+            initial="hidden" animate="show" variants={fadeUp} custom={0}
+            className="about-eyebrow"
+          >
+            WHAT IS KELIR?
+          </motion.h4>
           <motion.h1
             initial="hidden" animate="show" variants={fadeUp} custom={1}
             className="about-title"
           >
-            We are entering food processing and advanced manufacturing.
+            BUILT ON EXPERIENCE. MOVING TOWARDS INNOVATION.
           </motion.h1>
           <motion.p
             className="about-lead"
             initial="hidden" animate="show" variants={fadeUp} custom={2}
           >
-            {company.intro}
+            KELIR is an Indian food and wellness business built on more than 17 years of hands-on experience in food and beverage operations.
           </motion.p>
+          <motion.p
+            className="about-lead"
+            initial="hidden" animate="show" variants={fadeUp} custom={3}
+          >
+            Our journey began with operating cafeterias, food courts, cafés, restaurants and specialised food and beverage counters across corporate and institutional environments.
+          </motion.p>
+          <motion.p
+            className="about-lead"
+            initial="hidden" animate="show" variants={fadeUp} custom={4}
+          >
+            Today, we are taking that experience into a new chapter focused on:
+          </motion.p>
+          <motion.div
+            className="about-focus-grid"
+            initial="hidden" animate="show" variants={fadeUp} custom={5}
+          >
+            {['Food Processing', 'Beverage Processing', 'R&D & Innovation', 'Product Development', 'Functional Foods', 'Wellness Products', 'Food Technology'].map((item) => (
+              <span key={item} className="about-focus-item">{item}</span>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -251,33 +274,29 @@ export default function About() {
         </motion.div>
       </section>
 
-      {/* PARTNERSHIPS */}
-      <section className="container section">
-        <motion.h2
-          className="section-title center"
-          initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
-        >
-          {partnerships.title}
-        </motion.h2>
-        <motion.p
-          className="section-sub center"
-          style={{ margin: '0 auto 40px' }}
-          initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} custom={1}
-        >
-          {partnerships.subtitle}
-        </motion.p>
-        <div className="partnerships-grid">
-          {partnerships.partners.map((p, i) => (
-            <motion.div
-              key={p.type}
-              className="partnership-card card"
-              initial="hidden" whileInView="show" viewport={{ once: true }}
-              variants={fadeUp} custom={i}
-            >
-              <h4>{p.type}</h4>
-              <p>{p.description}</p>
-            </motion.div>
-          ))}
+      {/* PARTNERSHIPS — SUN/PLANET LAYOUT */}
+      <section className="partnerships-sun-section">
+        <div className="container">
+          <div className="partnerships-radial">
+            <div className="partnerships-orbit" />
+            <div className="partnerships-sun">
+              <h2>Global Partnerships</h2>
+              <p>We are actively seeking partnerships with:</p>
+            </div>
+            {partnerships.partners.map((p, i) => (
+              <motion.div
+                key={p.type}
+                className="partnership-planet"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <h4>{p.type}</h4>
+                <p>{p.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
