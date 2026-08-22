@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 
 const onsiteImages = [
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.55 (1).jpeg',
-  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.55 (2).jpeg',
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.55.jpeg',
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.56 (2).jpeg',
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.56.jpeg',
@@ -18,12 +17,11 @@ const onsiteImages = [
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.14.00 (1).jpeg',
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.14.00 (2).jpeg',
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.14.00.jpeg',
-  '/photos/onsite/WhatsApp Image 2026-08-19 at 16.14.01 (1).jpeg',
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.14.01.jpeg',
+  '/photos/onsite/WhatsApp1 Image 2026-08-19 at 16.13.55.jpeg',
 ]
 
 const offsiteImages = [
-  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.10 (1).jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.10.jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.11 (1).jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.11 (2).jpeg',
@@ -34,8 +32,6 @@ const offsiteImages = [
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.13.jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.14.jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.15.jpeg',
-  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.16 (1).jpeg',
-  '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.16.jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.17.jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.19 (1).jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.19 (2).jpeg',
@@ -44,6 +40,14 @@ const offsiteImages = [
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.21 (1).jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.21.jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.22.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-19 at 02.52.08 (1).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-19 at 02.52.08 (2).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-19 at 02.52.08 (3).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-19 at 02.52.08 (4).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-19 at 02.52.08 (5).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-19 at 02.52.08 (6).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-19 at 02.52.08 (7).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-19 at 02.52.08.jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-22 at 10.11.37.jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-22 at 10.11.37 (1).jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-22 at 10.11.38.jpeg',

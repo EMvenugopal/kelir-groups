@@ -21,7 +21,6 @@ const brandLogos = [
   { src: '/photos/brandlogos/yovel.jpeg', alt: 'YOVEL' },
   { src: '/photos/brandlogos/zilmil.png', alt: 'ZILMIL' },
   { src: '/photos/brandlogos/kelirgroup.png', alt: 'KELIR GROUP' },
-  { src: '/photos/brandlogos/krithi ventures private limited.png', alt: 'KRITHI VENTURES' },
 ]
 
 const fadeUp = {
