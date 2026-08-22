@@ -44,6 +44,10 @@ const offsiteImages = [
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.21 (1).jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.21.jpeg',
   '/photos/offsite/WhatsApp Image 2026-08-14 at 00.24.22.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-22 at 10.11.37.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-22 at 10.11.37 (1).jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-22 at 10.11.38.jpeg',
+  '/photos/offsite/WhatsApp Image 2026-08-22 at 10.11.38 (1).jpeg',
 ]
 
 function MasonryGallery({ images }) {

@@ -143,14 +143,23 @@ export default function ScrollJourney() {
             Our food-service journey includes multiple brands and food businesses that we operated over the years.
           </p>
 
-          <div className="brand-cards-grid">
+          <div className="brand-cards-grid brand-cards-grid--operated">
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/jugojuice.png" alt="JUGO & YES CAFÉ" />
+                <img src="/photos/brandlogos/jugojuice.png" alt="JUGO ON THE JUICE" />
               </div>
-              <h3>JUGO &amp; YES CAFÉ</h3>
-              <p className="brand-card-cat">Juice &amp; Beverage / Café &amp; Confectionery</p>
-              <p className="brand-card-desc">Australian-inspired juice and beverage blends, café, beverage and confectionery operations within cafeteria environments.</p>
+              <h3>JUGO ON THE JUICE</h3>
+              <p className="brand-card-cat">Juice &amp; Beverage</p>
+              <p className="brand-card-desc">Australian-inspired juice and beverage blends, juice and sandwich counters within cafeteria environments.</p>
+            </div>
+
+            <div className="brand-card-item">
+              <div className="brand-card-logo">
+                <img src="/photos/brandlogos/yescafe.png" alt="YES CAFÉ" />
+              </div>
+              <h3>YES CAFÉ</h3>
+              <p className="brand-card-cat">Café &amp; Confectionery</p>
+              <p className="brand-card-desc">Hot and cold beverages with confectionery operations within cafeteria environments.</p>
             </div>
 
             <div className="brand-card-item">
@@ -173,9 +182,9 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/wild roots.png" alt="THE TWISTER EXPRESS" />
+                <img src="/photos/brandlogos/twisted desi express.png" alt="THE TWISTED DESI EXPRESS" />
               </div>
-              <h3>THE TWISTER EXPRESS</h3>
+              <h3>THE TWISTED DESI EXPRESS</h3>
               <p className="brand-card-cat">Quick-Service Indian Vegetarian Restaurant</p>
               <p className="brand-card-desc">Quick-service Indian vegetarian food operations.</p>
             </div>
@@ -230,7 +239,7 @@ export default function ScrollJourney() {
             </div>
           </div>
 
-          <div className="brand-cards-grid brand-cards-grid--3">
+          <div className="brand-cards-grid">
             <div className="brand-card-item">
               <div className="brand-card-logo">
                 <img src="/photos/brandlogos/alilai.jpeg" alt="ALILAI" />
@@ -256,6 +265,15 @@ export default function ScrollJourney() {
               <h3>KITH &amp; KIN</h3>
               <p className="brand-card-cat">A New Food Brand in Development</p>
               <p className="brand-card-desc">Kith &amp; Kin is an upcoming food brand being developed as part of the next generation of KELIR products.</p>
+            </div>
+
+            <div className="brand-card-item">
+              <div className="brand-card-logo">
+                <img src="/photos/brandlogos/wild roots.png" alt="WILDROOTZ" />
+              </div>
+              <h3>WILDROOTZ</h3>
+              <p className="brand-card-cat">Wild Rice &amp; Natural Foods</p>
+              <p className="brand-card-desc">Wildrootz focuses on wild rice and natural food products sourced from traditional farming.</p>
             </div>
           </div>
 
