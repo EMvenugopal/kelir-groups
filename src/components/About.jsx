@@ -164,7 +164,7 @@ export default function About() {
             </motion.div>
             <motion.div className="vision-card vision-card--wide" initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} custom={3}>
               <h3>Business Mission</h3>
-              <p>UTFTC will focus on:</p>
+              <p>KELIR will focus on:</p>
               <div className="vision-mission-list">
                 {vision.businessMission.map((item) => (
                   <span key={item} className="era-tag">{item}</span>

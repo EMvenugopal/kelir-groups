@@ -22,14 +22,53 @@ const partnershipTypes = [
   'General Enquiry',
 ]
 
+const FORMSUBMIT_EMAIL = 'Kiranrajashekar@kelirgroups.com'
+
 export default function Contact() {
   const [searchParams] = useSearchParams()
   const [partnershipType, setPartnershipType] = useState('')
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
 
   useEffect(() => {
     const p = searchParams.get('partnership')
     if (p) setPartnershipType(p)
   }, [searchParams])
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const formEl = e.currentTarget
+    const fd = new FormData(formEl)
+
+    if ((fd.get('_honey') || '').trim()) return // bot trap
+
+    const payload = {}
+    for (const [key, value] of fd.entries()) {
+      if (key === '_honey' || key === 'attachment') continue
+      payload[key] = typeof value === 'string' ? value : ''
+    }
+
+    const file = fd.get('attachment')
+    if (file && file.name) payload['Attachment (to be shared by email)'] = file.name
+
+    payload['_subject'] = 'New Partnership Enquiry — kelirgroups.com'
+    payload['_template'] = 'table'
+    payload['_captcha'] = 'false'
+
+    setStatus('sending')
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${FORMSUBMIT_EMAIL}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      if (!res.ok) throw new Error('Submission failed')
+      setStatus('success')
+      formEl.reset()
+      setPartnershipType('')
+    } catch {
+      setStatus('error')
+    }
+  }
 
   return (
     <section className="contact-section contact-full">
@@ -78,7 +117,7 @@ export default function Contact() {
                 <span>Website: <a href="https://www.kelirgroups.com" target="_blank" rel="noreferrer" style={{ color: 'var(--blue)' }}>www.kelirgroups.com</a></span>
               </div>
               <div className="contact-detail">
-                <span>Email: contact@kelirgroup.com</span>
+                  <span>Email: contact@kelirgroups.com</span>
               </div>
               <div className="contact-detail">
                 <span>Phone: [Official phone number to be added]</span>
@@ -89,35 +128,36 @@ export default function Contact() {
           <motion.form
             className="contact-form"
             initial="hidden" animate="show"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
+            <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
             <motion.div className="form-group" variants={fadeUp} custom={0}>
               <label>Name*</label>
-              <input type="text" placeholder="Your name" required />
+              <input type="text" name="Name" placeholder="Your name" required />
             </motion.div>
             <motion.div className="form-group" variants={fadeUp} custom={1}>
               <label>Company Name*</label>
-              <input type="text" placeholder="Company name" required />
+              <input type="text" name="Company Name" placeholder="Company name" required />
             </motion.div>
             <motion.div className="form-group" variants={fadeUp} custom={2}>
               <label>Designation</label>
-              <input type="text" placeholder="Your designation" />
+              <input type="text" name="Designation" placeholder="Your designation" />
             </motion.div>
             <motion.div className="form-group" variants={fadeUp} custom={3}>
               <label>Country*</label>
-              <input type="text" placeholder="Country" required />
+              <input type="text" name="Country" placeholder="Country" required />
             </motion.div>
             <motion.div className="form-group" variants={fadeUp} custom={4}>
               <label>Phone Number</label>
-              <input type="tel" placeholder="Phone number" />
+              <input type="tel" name="Phone Number" placeholder="Phone number" />
             </motion.div>
             <motion.div className="form-group" variants={fadeUp} custom={5}>
               <label>Email Address*</label>
-              <input type="email" placeholder="your@email.com" required />
+              <input type="email" name="Email Address" placeholder="your@email.com" required />
             </motion.div>
             <motion.div className="form-group" variants={fadeUp} custom={6}>
               <label>Partnership Type*</label>
-              <select required value={partnershipType} onChange={(e) => setPartnershipType(e.target.value)}>
+              <select required name="Partnership Type" value={partnershipType} onChange={(e) => setPartnershipType(e.target.value)}>
                 <option value="" disabled>Select partnership type</option>
                 {partnershipTypes.map((type) => (
                   <option key={type} value={type}>{type}</option>
@@ -126,20 +166,35 @@ export default function Contact() {
             </motion.div>
             <motion.div className="form-group" variants={fadeUp} custom={7}>
               <label>Product / Business Category</label>
-              <input type="text" placeholder="Product or business category" />
+              <input type="text" name="Product / Business Category" placeholder="Product or business category" />
             </motion.div>
             <motion.div className="form-group" variants={fadeUp} custom={8}>
               <label>Message*</label>
-              <textarea placeholder="Tell us about your inquiry..." required />
+              <textarea name="Message" placeholder="Tell us about your enquiry..." required />
             </motion.div>
             <motion.div className="form-group" variants={fadeUp} custom={9}>
               <label>Upload Company Profile / Proposal / Product Catalogue</label>
-              <input type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" />
+              <input type="file" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" />
             </motion.div>
             <motion.div variants={fadeUp} custom={10}>
-              <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%' }}>
-                SUBMIT ENQUIRY
+              <button
+                type="submit"
+                className="btn btn-primary btn-lg"
+                style={{ width: '100%' }}
+                disabled={status === 'sending'}
+              >
+                {status === 'sending' ? 'SENDING…' : 'SUBMIT ENQUIRY'}
               </button>
+              {status === 'success' && (
+                <p className="form-status form-status--success">
+                  Thank you! Your enquiry has been sent. We will get back to you shortly.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="form-status form-status--error">
+                  Something went wrong while sending. Please try again or email us directly at {FORMSUBMIT_EMAIL}.
+                </p>
+              )}
             </motion.div>
           </motion.form>
 

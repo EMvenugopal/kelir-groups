@@ -20,7 +20,7 @@ export const founders = [
     name: 'Kiran Rajasekhar',
     role: 'Founder & Managing Director',
     photo: '/photos/kr2.png',
-    bio: 'Kiran Rajasekhar brings approximately 17+ years of experience in the Food & Beverage, hospitality and institutional food-service sector. His experience includes business development, corporate catering, hospitality operations, centralized food production, institutional customer management and large-scale food-service operations.',
+    bio: 'Kiran Rajasekhar brings over 17 years of experience in the Food & Beverage, hospitality and institutional food-service sector. His experience includes business development, corporate catering, hospitality operations, centralized food production, institutional customer management and large-scale food-service operations.',
     expertise: [
       'Food & Beverage operations',
       'Corporate catering',
@@ -49,7 +49,7 @@ export const founders = [
       'Business operations',
       'Operational accountability',
     ],
-    closing: 'He will contribute to UTT\'s operational execution, institutional business development and commercial growth.',
+    closing: 'He will contribute to KELIR\'s operational execution, institutional business development and commercial growth.',
   },
 ]
 
@@ -57,7 +57,7 @@ export const vision = {
   ourVision: 'To be a global leader in functional and wellness food innovation, creating a healthier world through science, nature and technology.',
   ourMission: 'To develop and deliver clean label, nutritious, functional and sustainable food products using advanced food technology, traditional wisdom and modern science.',
   businessVision: 'To build a leading Indian functional and wellness food company that combines traditional Indian ingredients, modern food technology, clean-label product development and institutional distribution.',
-  businessVisionDetail: 'UTT\'s long-term objective is to develop products for everyday consumption that are affordable, convenient and differentiated from conventional mass-market snacks.',
+  businessVisionDetail: 'KELIR\'s long-term objective is to develop products for everyday consumption that are affordable, convenient and differentiated from conventional mass-market snacks.',
   businessMission: [
     'Functional and wellness foods',
     'Clean-label-oriented product development',

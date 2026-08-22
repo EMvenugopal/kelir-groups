@@ -67,7 +67,7 @@ const roadmapItems = [
 const techChain = ['Product Identity', 'Traceability', 'Processing', 'Inventory', 'Distribution', 'Consumer Engagement']
 
 const partnerships = [
-  { title: 'CORPORATE PARTNERSHIPS', desc: 'For corporate and institutional organizations interested in food products, employee wellness, food-service opportunities and business collaborations.', cta: 'Corporate Partnership', value: 'Corporate Partnership' },
+  { title: 'CORPORATE PARTNERSHIPS', desc: 'For corporate and institutional organisations interested in food products, employee wellness, food-service opportunities and business collaborations.', cta: 'Corporate Partnership', value: 'Corporate Partnership' },
   { title: 'DISTRIBUTION PARTNERSHIPS', desc: 'For distributors, stockists, institutional distributors, regional partners and retail distribution networks.', cta: 'Become a Distribution Partner', value: 'Distribution Partnership' },
   { title: 'INTERNATIONAL PARTNERSHIPS', desc: 'For international distributors, market-entry partners, importers and businesses interested in bringing KELIR products to international markets.', cta: 'International Partnership', value: 'International Partnership' },
   { title: 'MACHINERY & PROCESSING TECHNOLOGY PARTNERSHIPS', desc: 'For food-processing machinery manufacturers, beverage-processing equipment providers, packaging companies, automation providers, laboratory equipment suppliers and processing technology companies.', cta: 'Technology & Machinery Partnership', value: 'Machinery & Processing Technology' },
@@ -251,9 +251,9 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/clove and coast.png" alt="GLOVE & COAST" />
+                <img src="/photos/brandlogos/clove and coast.png" alt="CLOVE & COAST" />
               </div>
-              <h3>GLOVE &amp; COAST</h3>
+              <h3>CLOVE &amp; COAST</h3>
               <p className="brand-card-cat">Non-Veg Pickles</p>
               <p className="brand-card-desc">A focused food brand developed around non-vegetarian pickle products and traditional flavours.</p>
             </div>

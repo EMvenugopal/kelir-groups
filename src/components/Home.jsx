@@ -8,14 +8,20 @@ const brandLogos = [
   { src: '/photos/brandlogos/jugojuice.png', alt: 'JUGO' },
   { src: '/photos/brandlogos/pothigai.png', alt: 'POTHIGHAI' },
   { src: '/photos/brandlogos/twisted desi.jpeg', alt: 'THE TWISTED DESI' },
-  { src: '/photos/brandlogos/wild roots.png', alt: 'THE TWISTER EXPRESS' },
+  { src: '/photos/brandlogos/wild roots.png', alt: 'WILDROOTZ' },
   { src: '/photos/brandlogos/ayuraar.png', alt: 'AYURAAR' },
   { src: '/photos/brandlogos/borass2.png', alt: 'BORASS' },
   { src: '/photos/brandlogos/oilvika.png', alt: 'OILVIKA' },
   { src: '/photos/brandlogos/arimaariva.png', alt: 'ARIMA ARIVA' },
   { src: '/photos/brandlogos/alilai.jpeg', alt: 'ALILAI' },
-  { src: '/photos/brandlogos/clove and coast.png', alt: 'GLOVE & COAST' },
+  { src: '/photos/brandlogos/clove and coast.png', alt: 'CLOVE & COAST' },
   { src: '/photos/brandlogos/kithnkin.jpeg', alt: 'KITH & KIN' },
+  { src: '/photos/brandlogos/twisted desi express.png', alt: 'THE TWISTED DESI EXPRESS' },
+  { src: '/photos/brandlogos/yescafe.png', alt: 'YES CAFÉ' },
+  { src: '/photos/brandlogos/yovel.jpeg', alt: 'YOVEL' },
+  { src: '/photos/brandlogos/zilmil.png', alt: 'ZILMIL' },
+  { src: '/photos/brandlogos/kelirgroup.png', alt: 'KELIR GROUP' },
+  { src: '/photos/brandlogos/krithi ventures private limited.png', alt: 'KRITHI VENTURES' },
 ]
 
 const fadeUp = {
@@ -104,7 +110,7 @@ export default function Home() {
         <div className="container hero-grid">
           <motion.div className="hero-text" initial="hidden" animate="show">
             <motion.h1 variants={fadeUp} custom={0}>
-              We are entering into Food Processing and Advanced Manufacturing.
+              We are entering Food Processing and Advanced Manufacturing.
             </motion.h1>
             <motion.p className="hero-headline" variants={fadeUp} custom={1}>
               {company.intro}
