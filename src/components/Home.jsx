@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Counter from './Counter.jsx'
 import { company, stats, ventures, whatWeDo } from '../data/company.js'
@@ -214,7 +214,11 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-      <BrandModal isOpen={isModalOpen} brandKey={brandKey} onClose={() => setIsModalOpen(false)} />
+      <AnimatePresence>
+        {isModalOpen && (
+          <BrandModal isOpen={isModalOpen} brandKey={brandKey} onClose={() => setIsModalOpen(false)} />
+        )}
+      </AnimatePresence>
     </div>
   )
 }
