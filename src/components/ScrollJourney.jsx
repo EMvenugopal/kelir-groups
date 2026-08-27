@@ -146,7 +146,7 @@ export default function ScrollJourney() {
           <div className="brand-cards-grid brand-cards-grid--operated">
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/jugojuice.png" alt="JUGO ON THE JUICE" />
+                <img src="/photos/brandlogos/jugojuice.webp" alt="JUGO ON THE JUICE" />
               </div>
               <h3>JUGO ON THE JUICE</h3>
               <p className="brand-card-cat">Juice &amp; Beverage</p>
@@ -155,7 +155,7 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/yescafe.png" alt="YES CAFÉ" />
+                <img src="/photos/brandlogos/yescafe.webp" alt="YES CAFÉ" />
               </div>
               <h3>YES CAFÉ</h3>
               <p className="brand-card-cat">Café &amp; Confectionery</p>
@@ -164,7 +164,7 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/pothigai.png" alt="POTHIGHAI" />
+                <img src="/photos/brandlogos/pothigai.webp" alt="POTHIGHAI" />
               </div>
               <h3>POTHIGHAI</h3>
               <p className="brand-card-cat">The Mother's Kitchen Biryani</p>
@@ -173,7 +173,7 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/twisted desi.jpeg" alt="THE TWISTED DESI" />
+                <img src="/photos/brandlogos/twisted desi.webp" alt="THE TWISTED DESI" />
               </div>
               <h3>THE TWISTED DESI</h3>
               <p className="brand-card-cat">Vegetarian International Cuisine</p>
@@ -182,7 +182,7 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/twisted desi express.png" alt="THE TWISTED DESI EXPRESS" />
+                <img src="/photos/brandlogos/twisted desi express.webp" alt="THE TWISTED DESI EXPRESS" />
               </div>
               <h3>THE TWISTED DESI EXPRESS</h3>
               <p className="brand-card-cat">Quick-Service Indian Vegetarian Restaurant</p>
@@ -204,7 +204,7 @@ export default function ScrollJourney() {
           <div className="brand-cards-grid">
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/ayuraar.png" alt="AYURAAR" />
+                <img src="/photos/brandlogos/ayuraar.webp" alt="AYURAAR" />
               </div>
               <h3>AYURAAR</h3>
               <p className="brand-card-cat">Wild Rice | Millets | Grains | Masalas</p>
@@ -213,7 +213,7 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/borass2.png" alt="BORASS" />
+                <img src="/photos/brandlogos/borass2.webp" alt="BORASS" />
               </div>
               <h3>BORASS</h3>
               <p className="brand-card-cat">Natural Sweeteners &amp; Food Products</p>
@@ -222,7 +222,7 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/oilvika.png" alt="OILVIKA" />
+                <img src="/photos/brandlogos/oilvika.webp" alt="OILVIKA" />
               </div>
               <h3>OILVIKA</h3>
               <p className="brand-card-cat">Oils &amp; Functional Oils</p>
@@ -231,7 +231,7 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/arimaariva.png" alt="ARIMA ARIVA" />
+                <img src="/photos/brandlogos/arimaariva.webp" alt="ARIMA ARIVA" />
               </div>
               <h3>ARIMA ARIVA</h3>
               <p className="brand-card-cat">Heritage | Nature | Wellness</p>
@@ -242,7 +242,7 @@ export default function ScrollJourney() {
           <div className="brand-cards-grid">
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/alilai.jpeg" alt="ALILAI" />
+                <img src="/photos/brandlogos/alilai.webp" alt="ALILAI" />
               </div>
               <h3>ALILAI</h3>
               <p className="brand-card-cat">Traditional Roots. Modern Products.</p>
@@ -251,7 +251,7 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/clove and coast.png" alt="CLOVE & COAST" />
+                <img src="/photos/brandlogos/clove and coast.webp" alt="CLOVE & COAST" />
               </div>
               <h3>CLOVE &amp; COAST</h3>
               <p className="brand-card-cat">Non-Veg Pickles</p>
@@ -260,7 +260,7 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/kithnkin.jpeg" alt="KITH & KIN" />
+                <img src="/photos/brandlogos/kithnkin.webp" alt="KITH & KIN" />
               </div>
               <h3>KITH &amp; KIN</h3>
               <p className="brand-card-cat">A New Food Brand in Development</p>
@@ -269,7 +269,7 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
-                <img src="/photos/brandlogos/wild roots.png" alt="WILDROOTZ" />
+                <img src="/photos/brandlogos/wild roots.webp" alt="WILDROOTZ" />
               </div>
               <h3>WILDROOTZ</h3>
               <p className="brand-card-cat">Wild Rice &amp; Natural Foods</p>

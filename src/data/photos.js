@@ -52,42 +52,42 @@ const years = [
  */
 const photos = [
   // ===== 2007-2008: Jugo Foods Era =====
-  { id: 1, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.10 (1).jpeg', title: 'Corporate Kitchen', category: 'Corporate', year: '2007', era: 'beginnings' },
-  { id: 2, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.10.jpeg', title: 'Chennai Streets', category: 'Street', year: '2007', era: 'beginnings' },
-  { id: 3, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.11 (1).jpeg', title: 'Team Lunch', category: 'Corporate', year: '2008', era: 'beginnings' },
+  { id: 1, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.10 (1).webp', title: 'Corporate Kitchen', category: 'Corporate', year: '2007', era: 'beginnings' },
+  { id: 2, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.10.webp', title: 'Chennai Streets', category: 'Street', year: '2007', era: 'beginnings' },
+  { id: 3, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.11 (1).webp', title: 'Team Lunch', category: 'Corporate', year: '2008', era: 'beginnings' },
 
   // ===== 2009-2014: Growing Today Era =====
-  { id: 4, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.11 (2).jpeg', title: 'Central Kitchen', category: 'Corporate', year: '2011', era: 'founding' },
-  { id: 5, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.11.jpeg', title: 'Bengaluru Skyline', category: 'Landscape', year: '2012', era: 'founding' },
-  { id: 6, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.12 (1).jpeg', title: 'Corporate Event', category: 'Events', year: '2013', era: 'founding' },
+  { id: 4, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.11 (2).webp', title: 'Central Kitchen', category: 'Corporate', year: '2011', era: 'founding' },
+  { id: 5, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.11.webp', title: 'Bengaluru Skyline', category: 'Landscape', year: '2012', era: 'founding' },
+  { id: 6, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.12 (1).webp', title: 'Corporate Event', category: 'Events', year: '2013', era: 'founding' },
 
   // ===== 2015-2018: Scaling Era =====
-  { id: 7, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.12 (2).jpeg', title: 'Facility Operations', category: 'Corporate', year: '2015', era: 'scaling' },
-  { id: 8, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.12.jpeg', title: 'BBQ Setup', category: 'F&B', year: '2017', era: 'scaling' },
+  { id: 7, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.12 (2).webp', title: 'Facility Operations', category: 'Corporate', year: '2015', era: 'scaling' },
+  { id: 8, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.12.webp', title: 'BBQ Setup', category: 'F&B', year: '2017', era: 'scaling' },
 
   // ===== 2018-2021: The Twisted Desi =====
-  { id: 9, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.13.jpeg', title: 'Restaurant Interior', category: 'Brand', year: '2019', era: 'entrepreneurial' },
-  { id: 10, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.14.jpeg', title: 'Food Plating', category: 'F&B', year: '2020', era: 'entrepreneurial' },
+  { id: 9, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.13.webp', title: 'Restaurant Interior', category: 'Brand', year: '2019', era: 'entrepreneurial' },
+  { id: 10, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.14.webp', title: 'Food Plating', category: 'F&B', year: '2020', era: 'entrepreneurial' },
 
   // ===== 2019-2025: Global Era =====
-  { id: 11, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.15.jpeg', title: 'Singapore', category: 'Travel', year: '2020', era: 'global' },
-  { id: 12, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.16 (1).jpeg', title: 'Remote Work', category: 'Corporate', year: '2021', era: 'global' },
+  { id: 11, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.15.webp', title: 'Singapore', category: 'Travel', year: '2020', era: 'global' },
+  { id: 12, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.16 (1).webp', title: 'Remote Work', category: 'Corporate', year: '2021', era: 'global' },
 
   // ===== 2025-Present: Kelir Group =====
-  { id: 13, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.16.jpeg', title: 'Kelir Studio', category: 'Brand', year: '2025', era: 'present' },
-  { id: 14, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.17 (1).jpeg', title: 'Brand Shoot', category: 'Studio', year: '2025', era: 'present' },
-  { id: 15, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.17 (2).jpeg', title: 'Vision', category: 'Landscape', year: '2025', era: 'present' },
+  { id: 13, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.16.webp', title: 'Kelir Studio', category: 'Brand', year: '2025', era: 'present' },
+  { id: 14, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.17 (1).webp', title: 'Brand Shoot', category: 'Studio', year: '2025', era: 'present' },
+  { id: 15, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.17 (2).webp', title: 'Vision', category: 'Landscape', year: '2025', era: 'present' },
 
   // ===== Additional photos =====
-  { id: 16, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.17.jpeg', title: 'Hospitality Detail', category: 'Hospitality', year: '2025', era: 'present' },
-  { id: 17, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.18.jpeg', title: 'Street Frames', category: 'Street', year: '2025', era: 'present' },
-  { id: 18, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.19 (1).jpeg', title: 'Architectural Lines', category: 'Architecture', year: '2025', era: 'present' },
-  { id: 19, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.19 (2).jpeg', title: 'Traveller\'s Eye', category: 'Travel', year: '2025', era: 'present' },
-  { id: 20, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.19.jpeg', title: 'Nature Study', category: 'Nature', year: '2025', era: 'present' },
-  { id: 21, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.20.jpeg', title: 'Event Moments', category: 'Events', year: '2025', era: 'present' },
-  { id: 22, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.21 (1).jpeg', title: 'F&B Craft', category: 'F&B', year: '2025', era: 'present' },
-  { id: 23, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.21.jpeg', title: 'Portrait Session', category: 'Portrait', year: '2025', era: 'present' },
-  { id: 24, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.22.jpeg', title: 'Beyond Borders', category: 'Travel', year: '2025', era: 'present' },
+  { id: 16, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.17.webp', title: 'Hospitality Detail', category: 'Hospitality', year: '2025', era: 'present' },
+  { id: 17, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.18.webp', title: 'Street Frames', category: 'Street', year: '2025', era: 'present' },
+  { id: 18, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.19 (1).webp', title: 'Architectural Lines', category: 'Architecture', year: '2025', era: 'present' },
+  { id: 19, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.19 (2).webp', title: 'Traveller\'s Eye', category: 'Travel', year: '2025', era: 'present' },
+  { id: 20, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.19.webp', title: 'Nature Study', category: 'Nature', year: '2025', era: 'present' },
+  { id: 21, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.20.webp', title: 'Event Moments', category: 'Events', year: '2025', era: 'present' },
+  { id: 22, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.21 (1).webp', title: 'F&B Craft', category: 'F&B', year: '2025', era: 'present' },
+  { id: 23, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.21.webp', title: 'Portrait Session', category: 'Portrait', year: '2025', era: 'present' },
+  { id: 24, src: 'photos/WhatsApp Image 2026-08-14 at 00.24.22.webp', title: 'Beyond Borders', category: 'Travel', year: '2025', era: 'present' },
 ]
 
 export { categories, years }

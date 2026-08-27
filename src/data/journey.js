@@ -20,7 +20,7 @@ const journey = [
     ],
     tags: ['Food Services', 'Corporate Catering', 'Brand Building'],
     accentColor: '#f09020',
-    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.10 (1).jpeg',
+    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.10 (1).webp',
   },
   {
     id: 'growing-today-hospitality',
@@ -40,7 +40,7 @@ const journey = [
     ],
     tags: ['Multi-Brand', 'Central Kitchen', 'Scale'],
     accentColor: '#e84808',
-    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.10.jpeg',
+    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.10.webp',
   },
   {
     id: 'strategic-exit-2016',
@@ -56,7 +56,7 @@ const journey = [
     ],
     tags: ['Exit', 'M&A', 'Milestone'],
     accentColor: '#f09020',
-    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.11 (1).jpeg',
+    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.11 (1).webp',
   },
   {
     id: 'kiran-enterprises',
@@ -72,7 +72,7 @@ const journey = [
     ],
     tags: ['Supply Chain', 'Corporate', 'Lean Operations'],
     accentColor: '#e84808',
-    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.11 (2).jpeg',
+    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.11 (2).webp',
   },
   {
     id: 'twisted-desi',
@@ -88,7 +88,7 @@ const journey = [
     ],
     tags: ['Restaurant', 'Fine Dining', 'Brand'],
     accentColor: '#f09020',
-    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.11.jpeg',
+    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.11.webp',
   },
   {
     id: 'twister-express',
@@ -104,7 +104,7 @@ const journey = [
     ],
     tags: ['QSR', 'Expansion', 'Bengaluru'],
     accentColor: '#e84808',
-    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.12 (1).jpeg',
+    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.12 (1).webp',
   },
   {
     id: 'krithi-ventures',
@@ -122,7 +122,7 @@ const journey = [
     ],
     tags: ['Central Kitchen', 'Corporate Catering', 'Operations'],
     accentColor: '#f09020',
-    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.12 (2).jpeg',
+    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.12 (2).webp',
   },
   {
     id: 'strategic-exit-2023',
@@ -138,7 +138,7 @@ const journey = [
     ],
     tags: ['Exit', 'Pivot', 'New Beginning'],
     accentColor: '#e84808',
-    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.12.jpeg',
+    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.12.webp',
   },
   {
     id: 'kelir-group',
@@ -157,7 +157,7 @@ const journey = [
     ],
     tags: ['Manufacturing', 'R&D', 'Nutrition'],
     accentColor: '#f09020',
-    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.13.jpeg',
+    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.13.webp',
   },
   {
     id: 'future-vision',
@@ -178,7 +178,7 @@ const journey = [
     ],
     tags: ['Vision', 'Manufacturing', 'Global'],
     accentColor: '#e84808',
-    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.14.jpeg',
+    image: 'photos/WhatsApp Image 2026-08-14 at 00.24.14.webp',
   },
 ]
 

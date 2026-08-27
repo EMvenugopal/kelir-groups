@@ -19,7 +19,7 @@ export const founders = [
   {
     name: 'Kiran Rajasekhar',
     role: 'Founder & Managing Director',
-    photo: '/photos/kr2.png',
+    photo: '/photos/kr2.webp',
     bio: 'Kiran Rajasekhar brings over 17 years of experience in the Food & Beverage, hospitality and institutional food-service sector. His experience includes business development, corporate catering, hospitality operations, centralized food production, institutional customer management and large-scale food-service operations.',
     expertise: [
       'Food & Beverage operations',
@@ -37,7 +37,7 @@ export const founders = [
   {
     name: 'C. B. Raghavendra',
     role: 'Co-Founder & Director',
-    photo: '/photos/cbr.jpeg',
+    photo: '/photos/cbr.webp',
     bio: 'C. B. Raghavendra brings approximately 20 years of professional experience, primarily across hospitality and restaurant operations. His experience includes restaurant management, inventory management, staff management, customer experience, training, business operations and team leadership. His professional background includes experience associated with Pizza Hut / YUM Restaurants International franchise operations.',
     expertise: [
       'Restaurant operations',

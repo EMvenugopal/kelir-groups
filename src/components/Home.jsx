@@ -3,24 +3,25 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Counter from './Counter.jsx'
 import { company, stats, ventures, whatWeDo } from '../data/company.js'
+import BrandModal from './BrandModal.jsx'
 
 const brandLogos = [
-  { src: '/photos/brandlogos/jugojuice.png', alt: 'JUGO' },
-  { src: '/photos/brandlogos/pothigai.png', alt: 'POTHIGHAI' },
-  { src: '/photos/brandlogos/twisted desi.jpeg', alt: 'THE TWISTED DESI' },
-  { src: '/photos/brandlogos/wild roots.png', alt: 'WILDROOTZ' },
-  { src: '/photos/brandlogos/ayuraar.png', alt: 'AYURAAR' },
-  { src: '/photos/brandlogos/borass2.png', alt: 'BORASS' },
-  { src: '/photos/brandlogos/oilvika.png', alt: 'OILVIKA' },
-  { src: '/photos/brandlogos/arimaariva.png', alt: 'ARIMA ARIVA' },
-  { src: '/photos/brandlogos/alilai.jpeg', alt: 'ALILAI' },
-  { src: '/photos/brandlogos/clove and coast.png', alt: 'CLOVE & COAST' },
-  { src: '/photos/brandlogos/kithnkin.jpeg', alt: 'KITH & KIN' },
-  { src: '/photos/brandlogos/twisted desi express.png', alt: 'THE TWISTED DESI EXPRESS' },
-  { src: '/photos/brandlogos/yescafe.png', alt: 'YES CAFÉ' },
-  { src: '/photos/brandlogos/yovel.jpeg', alt: 'YOVEL' },
-  { src: '/photos/brandlogos/zilmil.png', alt: 'ZILMIL' },
-  { src: '/photos/brandlogos/kelirgroup.png', alt: 'KELIR GROUP' },
+  { src: '/photos/brandlogos/jugojuice.webp', alt: 'JUGO', key: 'JUGO' },
+  { src: '/photos/brandlogos/pothigai.webp', alt: 'POTHIGHAI', key: 'POTHIGHAI' },
+  { src: '/photos/brandlogos/twisted desi.webp', alt: 'THE TWISTED DESI', key: 'THE TWISTED DESI' },
+  { src: '/photos/brandlogos/wild roots.webp', alt: 'WILDROOTZ', key: 'WILDROOTZ' },
+  { src: '/photos/brandlogos/ayuraar.webp', alt: 'AYURAAR', key: 'AYURAAR' },
+  { src: '/photos/brandlogos/borass2.webp', alt: 'BORASS', key: 'BORASS' },
+  { src: '/photos/brandlogos/oilvika.webp', alt: 'OILVIKA', key: 'OILVIKA' },
+  { src: '/photos/brandlogos/arimaariva.webp', alt: 'ARIMA ARIVA', key: 'ARIMA ARIVA' },
+  { src: '/photos/brandlogos/alilai.webp', alt: 'ALILAI', key: 'ALILAI' },
+  { src: '/photos/brandlogos/clove and coast.webp', alt: 'CLOVE & COAST', key: 'CLOVE & COAST' },
+  { src: '/photos/brandlogos/kithnkin.webp', alt: 'KITH & KIN', key: 'KITH & KIN' },
+  { src: '/photos/brandlogos/twisted desi express.webp', alt: 'THE TWISTED DESI EXPRESS', key: 'THE TWISTED DESI EXPRESS' },
+  { src: '/photos/brandlogos/yescafe.webp', alt: 'YES CAFÉ', key: 'YES_CAFE' },
+  { src: '/photos/brandlogos/yovel.webp', alt: 'YOVEL', key: 'YOVEL' },
+  { src: '/photos/brandlogos/zilmil.webp', alt: 'ZILMIL', key: 'ZILMIL' },
+  { src: '/photos/brandlogos/kelirgroup.webp', alt: 'KELIR GROUP', key: 'KELIR GROUP' },
 ]
 
 const fadeUp = {
@@ -100,6 +101,8 @@ function OrbitRing({ isHovered }) {
 
 export default function Home() {
   const [hovered, setHovered] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [brandKey, setBrandKey] = useState(null)
 
   return (
     <div>
@@ -117,20 +120,19 @@ export default function Home() {
           </motion.div>
 
           {/* Brand logos masonry grid */}
-          <motion.div
-            className="hero-side"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
+          <motion.div className="hero-side" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, ease: 'easeOut' }}>
             <div className="hero-brand-masonry">
-              {brandLogos.map((logo, i) => (
+              {brandLogos.map((logo) => (
                 <motion.div
-                  key={i}
+                  key={logo.key}
                   className="hero-brand-item"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  transition={{ duration: 0.5, delay: 0 }}
+                  onClick={() => {
+                    setBrandKey(logo.key)
+                    setIsModalOpen(true)
+                  }}
                 >
                   <img src={logo.src} alt={logo.alt} loading="lazy" />
                 </motion.div>
@@ -157,13 +159,7 @@ export default function Home() {
       {/* WHAT WE DO */}
       <section className="what-we-do">
         <div className="container center">
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.h2 className="section-title" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             What We Do
           </motion.h2>
           <div className="what-we-do-grid">
@@ -183,35 +179,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ORBIT — Group of Companies */}
+      {/* ORBIT */}
       <section className="orbit-section">
         <div className="container center">
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.h2 className="section-title" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             A Decade of Building
           </motion.h2>
-          <motion.p
-            className="section-sub"
-            style={{ margin: '0 auto 50px' }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
+          <motion.p className="section-sub" style={{ margin: '0 auto 50px' }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
             10 ventures across 17+ years — tap or hover the circle to explore.
           </motion.p>
 
-          <div
-            className="orbit-display"
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            onClick={() => setHovered((h) => !h)}
-          >
+          <div className="orbit-display" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onClick={() => setHovered((h) => !h)}>
             <div className="orbit-center">
               <div className="orbit-core">
                 <span>K</span>
@@ -225,35 +203,18 @@ export default function Home() {
       {/* CLOSING */}
       <section className="home-closing">
         <div className="container center">
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.h2 className="section-title" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             And we're just getting started.
           </motion.h2>
-          <motion.p
-            className="section-sub"
-            style={{ margin: '0 auto 28px' }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
+          <motion.p className="section-sub" style={{ margin: '0 auto 28px' }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
             Build real products. Build strong companies. Create long-term value.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
             <Link to="/contact" className="btn btn-primary btn-lg">Get In Touch</Link>
           </motion.div>
         </div>
       </section>
+      <BrandModal isOpen={isModalOpen} brandKey={brandKey} onClose={() => setIsModalOpen(false)} />
     </div>
   )
 }
