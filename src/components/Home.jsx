@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Counter from './Counter.jsx'
+import SEO from './SEO.jsx'
 import { company, stats, ventures, whatWeDo } from '../data/company.js'
 import BrandModal from './BrandModal.jsx'
 
@@ -106,6 +107,12 @@ export default function Home() {
 
   return (
     <div>
+      <SEO
+        title="Functional Foods & Nutrition"
+        description="Kelir Group of Companies is an Indian food and nutrition enterprise building next-generation manufacturing for functional foods, beverages, collagen, healthy snacks, and nutrition products. 17+ years in F&B."
+        url="/"
+        keywords="Kelir Group, functional foods, nutrition, food manufacturing, collagen, functional beverages, healthy snacks, Tamil Nadu, India"
+      />
       {/* HERO */}
       <section className="hero">
         <div className="hero-glow" />

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import SEO from './SEO.jsx'
 
 const onsiteImages = [
   '/photos/onsite/WhatsApp Image 2026-08-19 at 16.13.55 (1).webp',
@@ -76,6 +77,12 @@ function MasonryGallery({ images }) {
 export default function Photographs() {
   return (
     <section className="photographs-page">
+      <SEO
+        title="Photographs"
+        description="Gallery of Kelir Group of Companies — onsite operations, offsite events, team activities, and behind-the-scenes from our food manufacturing journey."
+        url="/photographs"
+        keywords="Kelir Group photos, food manufacturing, onsite, offsite, team, gallery"
+      />
       <div className="container">
         <motion.h2
           className="section-title center"

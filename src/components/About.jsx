@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import Counter from './Counter.jsx'
+import SEO from './SEO.jsx'
 import { company, founders, vision, divisions, partnerships, values, stats, expertise, ventures } from '../data/company.js'
 
 const fadeUp = {
@@ -13,6 +14,12 @@ const fadeUp = {
 export default function About() {
   return (
     <div>
+      <SEO
+        title="About Us"
+        description="Learn about Kelir Group of Companies — founded by Kiran Rajasekhar with 17+ years in F&B. Our vision, mission, divisions, and the team building next-generation functional food manufacturing in India."
+        url="/about"
+        keywords="Kelir Group, about Kelir, Kiran Rajasekhar, C.B. Raghavendra, functional foods, food manufacturing, India"
+      />
       {/* HERO */}
       <section className="about-hero">
         <div className="container">

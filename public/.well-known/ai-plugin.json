@@ -1,0 +1,13 @@
+{
+  "schema_version": "v1",
+  "name": "Kelir Group of Companies",
+  "description": "Kelir Group of Companies is an Indian food and nutrition enterprise building next-generation manufacturing for functional foods, beverages, collagen, healthy snacks, and nutrition products. Founded by Kiran Rajasekhar with 17+ years in F&B.",
+  "url": "https://kelirgroups.com",
+  "logo_url": "https://kelirgroups.com/favicon.svg",
+  "contact_email": "",
+  "legal_info_url": "https://kelirgroups.com/about",
+  "human_url": "https://kelirgroups.com/contact",
+  "auth": {
+    "type": "none"
+  }
+}

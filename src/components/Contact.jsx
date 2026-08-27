@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useSearchParams } from 'react-router-dom'
+import SEO from './SEO.jsx'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -72,6 +73,12 @@ export default function Contact() {
 
   return (
     <section className="contact-section contact-full">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Kelir Group of Companies for partnerships, distribution, manufacturing collaborations, R&D, and investment opportunities in functional foods and nutrition."
+        url="/contact"
+        keywords="contact Kelir Group, partnership, distribution, manufacturing, investment, functional foods, India"
+      />
       <div className="container">
         <div className="contact-grid">
 
