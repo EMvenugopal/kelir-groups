@@ -8,6 +8,7 @@ import Journey from './components/Journey.jsx'
 import Photographs from './components/Photographs.jsx'
 import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
+import CookieBanner from './components/CookieBanner.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -43,6 +44,7 @@ export default function App() {
         </AnimatePresence>
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   )
 }
