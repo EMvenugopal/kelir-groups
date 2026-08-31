@@ -18,6 +18,7 @@ const brandLogos = [
   { src: '/photos/brandlogos/alilai.webp', alt: 'ALILAI', key: 'ALILAI' },
   { src: '/photos/brandlogos/clove and coast.webp', alt: 'CLOVE & COAST', key: 'CLOVE & COAST' },
   { src: '/photos/brandlogos/kithnkin.webp', alt: 'KITH & KIN', key: 'KITH & KIN' },
+  { src: '/photos/brandlogos/ottipop.webp', alt: 'OTTIPOP', key: 'OTTIPOP' },
   { src: '/photos/brandlogos/twisted desi express.webp', alt: 'THE TWISTED DESI EXPRESS', key: 'THE TWISTED DESI EXPRESS' },
   { src: '/photos/brandlogos/yescafe.webp', alt: 'YES CAFÉ', key: 'YES_CAFE' },
   { src: '/photos/brandlogos/yovel.webp', alt: 'YOVEL', key: 'YOVEL' },
@@ -104,6 +105,7 @@ export default function Home() {
   const [hovered, setHovered] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [brandKey, setBrandKey] = useState(null)
+  const [brandLogo, setBrandLogo] = useState(null)
 
   return (
     <div>
@@ -139,6 +141,7 @@ export default function Home() {
                   onClick={() => {
                     setBrandKey(logo.key)
                     setIsModalOpen(true)
+                    setBrandLogo(logo.src)
                   }}
                 >
                   <img src={logo.src} alt={logo.alt} loading="lazy" />
@@ -223,7 +226,7 @@ export default function Home() {
       </section>
       <AnimatePresence>
         {isModalOpen && (
-          <BrandModal isOpen={isModalOpen} brandKey={brandKey} onClose={() => setIsModalOpen(false)} />
+          <BrandModal isOpen={isModalOpen} brandKey={brandKey} logo={brandLogo} onClose={() => setIsModalOpen(false)} />
         )}
       </AnimatePresence>
     </div>

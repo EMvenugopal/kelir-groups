@@ -13,6 +13,7 @@ const brandDataMap = {
   ALILAI: { name: 'ALILAI', description: 'Traditional roots brand' },
   'CLOVE & COAST': { name: 'CLOVE & COAST', description: 'Non-veg pickles brand' },
   'KITH & KIN': { name: 'KITH & KIN', description: 'New food brand' },
+  OTTIPOP: { name: 'OTTIPOP', description: 'New food brand' },
   'THE TWISTED DESI EXPRESS': { name: 'THE TWISTED DESI EXPRESS', description: 'Quick-service venture, 2019.' },
   YES_CAFE: { name: 'YES CAFÉ', description: 'Café and confectionery brand' },
   YOVEL: { name: 'YOVEL', description: 'Functional foods brand' },
@@ -20,7 +21,7 @@ const brandDataMap = {
   'KELIR GROUP': { name: 'KELIR GROUP', description: 'Food Processing & Nutrition — Managing Director venture, 2025 to present.' },
 }
 
-export default function BrandModal({ isOpen, brandKey, onClose }) {
+export default function BrandModal({ isOpen, brandKey, logo, onClose }) {
   // If modal not open, no brand key, or brand key not in data map, don't render
   if (isOpen !== true || !brandKey || !(brandKey in brandDataMap)) {
     return null
@@ -54,6 +55,9 @@ export default function BrandModal({ isOpen, brandKey, onClose }) {
         <button className="brand-modal-close" aria-label="Close" onClick={handleClose}>
           ×
         </button>
+        {logo && (
+          <img className="modal-brand-logo" src={logo} alt={`${data.name} logo`} />
+        )}
         <h3 className="modal-brand-title">{data.name}</h3>
         <p className="modal-brand-description">{data.description}</p>
         <button className="btn btn-primary" onClick={handleClose}>Close</button>

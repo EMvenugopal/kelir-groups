@@ -269,6 +269,15 @@ export default function ScrollJourney() {
 
             <div className="brand-card-item">
               <div className="brand-card-logo">
+                <img src="/photos/brandlogos/ottipop.webp" alt="OTTIPOP" />
+              </div>
+              <h3>OTTIPOP</h3>
+              <p className="brand-card-cat">A New Food Brand in Development</p>
+              <p className="brand-card-desc">Ottipop is an upcoming food brand being developed as part of the next generation of KELIR products.</p>
+            </div>
+
+            <div className="brand-card-item">
+              <div className="brand-card-logo">
                 <img src="/photos/brandlogos/wild roots.webp" alt="WILDROOTZ" />
               </div>
               <h3>WILDROOTZ</h3>
